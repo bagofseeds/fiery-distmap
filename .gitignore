@@ -222,3 +222,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Zensical: example notebooks converted to markdown at build time
+docs/examples/*.md

@@ -2,7 +2,7 @@
 
 Euclidean distance transform in PyTorch.
 
-`fiery-distmap` is a [`fiery`](https://github.com/bagofseeds/fiery) bag; it
+`fiery-distmap` is a [`fiery`](https://github.com/bagofseeds/fiery) match; it
 imports as `fiery.distmap`.
 
 This is an implementation of the algorithm from the paper
@@ -35,7 +35,7 @@ from fiery.distmap import euclidean_distance_transform
 
 ## Example
 
-See our [**demo notebook**](notebooks/example.ipynb)
+See our [**demo notebook**](docs/examples/example.ipynb)
 
 ## API
 
