@@ -1,6 +1,9 @@
-# torch-distmap
+# fiery-distmap
 
 Euclidean distance transform in PyTorch.
+
+`fiery-distmap` is a [`fiery`](https://github.com/bagofseeds/fiery) bag; it
+imports as `fiery.distmap`.
 
 This is an implementation of the algorithm from the paper
 
@@ -18,16 +21,16 @@ and therefore does not allow backpropagation.
 
 - `torch >= 1.3`
 
-### Conda
-
-```shell
-conda install torch-distmap -c balbasty -c pytorch
-```
-
 ### Pip
 
 ```shell
-pip install torch-distmap
+pip install fiery-distmap
+```
+
+## Usage
+
+```python
+from fiery.distmap import euclidean_distance_transform
 ```
 
 ## Example
