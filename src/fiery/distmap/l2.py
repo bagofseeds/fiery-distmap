@@ -30,11 +30,14 @@ def euclidean_distance_transform(
         Number of spatial dimensions
     vx : [sequence of] float, default=1
         Voxel size
+    squared : bool, default=False
+        Return the squared distance map, skipping the final square
+        root.
 
     Returns
     -------
     d : (..., *spatial) tensor
-        Distance map
+        Distance map (or squared distance map, if `squared=True`)
 
     References
     ----------
@@ -78,11 +81,15 @@ def euclidean_signed_transform(
         Number of spatial dimensions
     vx : [sequence of] float, default=1
         Voxel size
+    squared : bool, default=False
+        Return the squared distance map, skipping the final square
+        root.
 
     Returns
     -------
     d : (..., *spatial) tensor
-        Signed distance map
+        Signed distance map (or squared signed distance map, if
+        `squared=True`)
 
     References
     ----------

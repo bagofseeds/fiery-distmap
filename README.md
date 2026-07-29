@@ -11,9 +11,9 @@ This is an implementation of the algorithm from the paper
 > Pedro F. Felzenszwalb & Daniel P. Huttenlocher <br />
 > _Theory of Computing_ (2012)
 
-Although it is in PyTorch, our implementation performs loops across
-voxels and hence quite slow. Moreover, it takes masks as an input
-and therefore does not allow backpropagation.
+Although it is written in PyTorch, our implementation loops across
+voxels and is therefore quite slow. Moreover, it takes masks as
+input and therefore does not support backpropagation.
 
 ## Installation
 
@@ -40,7 +40,7 @@ See our [**demo notebook**](docs/examples/example.ipynb)
 ## API
 
 ```python
-euclidean_distance_transform(x, ndim=None, vx=1)
+euclidean_distance_transform(x, ndim=None, vx=1, squared=False)
 """Compute the Euclidean distance transform of a binary image
 
 Parameters
@@ -52,6 +52,8 @@ ndim : int, default=`x.dim()`
     Number of spatial dimensions
 vx : [sequence of] float, default=1
     Voxel size
+squared : bool, default=False
+    Return the squared distance map, skipping the final square root.
 
 Returns
 -------
@@ -61,7 +63,7 @@ d : (..., *spatial) tensor
 ```
 
 ```python
-euclidean_signed_transform(x, ndim=None, vx=1)
+euclidean_signed_transform(x, ndim=None, vx=1, squared=False)
 """Compute the signed Euclidean distance transform of a binary image
 
 Parameters
@@ -74,6 +76,8 @@ ndim : int, default=`x.dim()`
     Number of spatial dimensions
 vx : [sequence of] float, default=1
     Voxel size
+squared : bool, default=False
+    Return the squared distance map, skipping the final square root.
 
 Returns
 -------
@@ -130,10 +134,9 @@ d : (..., *spatial) tensor
 - [edt](https://github.com/seung-lab/euclidean-distance-transform-3d) :
   a very fast CPU implementation of the same algorithm, written in C.
 
-
 - [scipy.ndimage.distance_transform_edt](https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.distance_transform_edt.html) :
-reference implementation, written in C, based on the paper
-> **"A linear time algorithm for computing exact euclidean distance
-> transforms of binary images in arbitrary dimensions"** <br />
-> C. R. Maurer,  Jr., R. Qi, V. Raghavan <br />
-> IEEE Trans. PAMI 25, 265-270, (2003) <br />
+  reference implementation, written in C, based on the paper
+  > **"A linear time algorithm for computing exact euclidean distance
+  > transforms of binary images in arbitrary dimensions"** <br />
+  > C. R. Maurer, Jr., R. Qi, V. Raghavan <br />
+  > IEEE Trans. PAMI 25, 265-270, (2003) <br />

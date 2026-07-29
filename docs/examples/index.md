@@ -4,4 +4,4 @@ icon: lucide/notebook
 
 # Examples
 
-- [Example](example.md)
+- [Example](example.ipynb)
